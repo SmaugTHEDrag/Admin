@@ -79,7 +79,7 @@ const ManageBooks = () => {
                             <Table.Cell>
                                 <Link
                                     className="font-medium text-cyan-600 hover:underline dark:text-cyan-500 mr-5"
-                                    to={`/admin/dashboard/edit-books/${book._id}`}
+                                    to={`/edit-books/${book._id}`}
                                 >
                                     Edit    
                                 </Link>
