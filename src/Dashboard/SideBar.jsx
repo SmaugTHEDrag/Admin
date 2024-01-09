@@ -17,7 +17,7 @@ const SideBar = () => {
         ><Dropdown
         arrowIcon={false}
         inline
-        label={<Avatar alt="User settings" img="" rounded/>}
+        label={<Avatar alt="User settings" img="https://cdn.vectorstock.com/i/1000x1000/34/29/man-with-inscription-admin-icon-outline-style-vector-30713429.webp" rounded/>}
       />
           <Link to ="/">
           <p>
