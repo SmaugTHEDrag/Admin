@@ -90,7 +90,7 @@ const EditBooks = () => {
   
     return (
       <div className='px-4 my-12'>
-        <h2 className='mb-8 text-3xl font-bold'>Upload A Book!</h2>
+        <h2 className='mb-8 text-3xl font-bold'>Update book!</h2>
         <form className="flex lg:w-[1180px] flex-col flex-wrap gap-4" onSubmit={handleUpdate}>
 
           {/* first row */}
