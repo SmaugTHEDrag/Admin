@@ -21,7 +21,7 @@ const SideBar = () => {
       />
           <Link to ="/">
           <p>
-            {user?.displayName || "Demo User" }
+            {user?.displayName || "Admin" }
           </p>
           </Link>
         </Sidebar.Logo>
