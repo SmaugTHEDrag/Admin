@@ -84,7 +84,6 @@ const ManageBooks = () => {
                                     Edit    
                                 </Link>
                                 <button className='bg-red-600 px-4 py-1 font-semibold text-white rounded-sm hover:bg-sky-600' onClick={() => handleDelete(book._id)}>Delete</button>
-                                <Link to={`/edit-books/${book._id}`}><button className='px-4 py-1 bg-white font-semibold text-black hover: text-black'><FaRegHeart /></button></Link>
                             </Table.Cell>
                         </Table.Row>
                     </Table.Body>)
