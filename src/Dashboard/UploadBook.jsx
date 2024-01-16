@@ -3,37 +3,6 @@ import React, { useState } from 'react'
 import { Button, Checkbox, Label, Select, TextInput, Textarea } from 'flowbite-react';
 
 const UploadBook = () => {
-  const bookCategories = [
-    "Fiction",
-    "Non-fiction",
-    "Mystery",
-    "Programming",
-    "Science fiction",
-    "Fantasy",
-    "Horror",
-    "Biography",
-    "Autobiography",
-    "History",
-    "Self-help",
-    "Business",
-    "Memoir",
-    "Poetry",
-    "Children's books",
-    "Travel",
-    "Religion and spirituality",
-    "Science",
-    "Art and design",
-  ];
-
-
-  const [selectedBookCategory, setSelectedBookCategory] = useState(
-    bookCategories[0]
-  );
-
-  const handleChangeSelectedValue = (event) => {
-    console.log(event.target.value);
-    setSelectedBookCategory(event.target.value);
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -42,7 +11,7 @@ const UploadBook = () => {
     const bookTitle = form.bookTitle.value;
     const authorName = form.authorName.value;
     const imageURL = form.imageURL.value;
-    const category = form.categoryName.value;
+    const category = form.category.value;
     const bookDescription = form.bookDescription.value;
     const bookPDFURL = form.bookPDFURL.value;
 
@@ -143,23 +112,18 @@ const UploadBook = () => {
           <div className='lg:w-1/2'>
             <div className="mb-2 block">
               <Label
-                htmlFor="inputState"
+                htmlFor="category"
                 value="Book Category"
               />
             </div>
-            <Select
-              id="inputState"
-              name="categoryName"
-              className="w-full rounded"
-              value={selectedBookCategory}
-              onChange={handleChangeSelectedValue}
-            >
-              {bookCategories.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </Select>
+            <TextInput
+              id="category"
+              placeholder="Category"
+              required
+              type="text"
+              name='category'
+              className='w-full'
+            />
           </div>
 
         </div>

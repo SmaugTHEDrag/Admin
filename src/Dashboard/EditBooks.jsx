@@ -7,34 +7,6 @@ const EditBooks = () => {
   const { bookTitle, authorName, imageURL, category, bookDescription, bookPDFURL } = useLoaderData();
   // console.log(bookTitle)
 
-  const bookCategories = [
-    "Fiction",
-    "Non-fiction",
-    "Mystery",
-    "Programming",
-    "Science fiction",
-    "Fantasy",
-    "Horror",
-    "Biography",
-    "Autobiography",
-    "History",
-    "Self-help",
-    "Business",
-    "Memoir",
-    "Poetry",
-    "Children's books",
-    "Travel",
-    "Religion and spirituality",
-    "Science",
-    "Art and design",
-  ];
-
-  const [selectedBookCategory, setSelectedBookCategory] = useState(bookCategories[0]);
-
-  const handleChangeSelectedValue = (event) => {
-    setSelectedBookCategory(event.target.value);
-  };
-
   const handleUpdate = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -42,7 +14,7 @@ const EditBooks = () => {
     const bookTitle = form.bookTitle.value;
     const authorName = form.authorName.value;
     const imageURL = form.imageURL.value;
-    const category = form.categoryName.value;
+    const category = form.category.value;
     const bookDescription = form.bookDescription.value;
     const bookPDFURL = form.bookPDFURL.value;
 
@@ -159,26 +131,21 @@ const EditBooks = () => {
 
             {/* book category */}
             <div className='lg:w-1/2'>
-              <div className="mb-2 block">
-                <Label
-                  htmlFor="inputState"
-                  value="Book Category"
-                />
-              </div>
-              <Select
-                id="inputState"
-                name="categoryName"
-                className="w-full rounded"
-                value={selectedBookCategory}
-                onChange={handleChangeSelectedValue}
-              >
-                {bookCategories.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </Select>
+            <div className="mb-2 block">
+              <Label
+                htmlFor="category"
+                value="Book Category"
+              />
             </div>
+            <TextInput
+              id="category"
+              placeholder="Category"
+              required
+              type="text"
+              name='category'
+              className='w-full'
+            />
+          </div>
 
           </div>
 
