@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { Button, Checkbox, Label, Select, TextInput, Textarea } from 'flowbite-react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 const EditBooks = () => {
   const { id } = useParams();
   const { bookTitle, authorName, imageURL, category, bookDescription, bookPDFURL } = useLoaderData();
-  // console.log(bookTitle)
-
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || '/manage';
+    // console.log(bookTitle)    
   const handleUpdate = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -17,7 +19,6 @@ const EditBooks = () => {
     const category = form.category.value;
     const bookDescription = form.bookDescription.value;
     const bookPDFURL = form.bookPDFURL.value;
-
     const bookObj = {
       bookTitle,
       authorName,
@@ -38,6 +39,8 @@ const EditBooks = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        alert("Update successful!");
+        navigate(from, {replace: true})
       })
       .catch((error) => {
         console.error('Error updating book:', error);
