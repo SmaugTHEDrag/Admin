@@ -144,6 +144,7 @@ const EditBooks = () => {
               type="text"
               name='category'
               className='w-full'
+              defaultValue={category}
             />
           </div>
 
