@@ -45,22 +45,6 @@ const EditBooks = () => {
       .catch((error) => {
         console.error('Error updating book:', error);
       });
-
-    // Update the favorite book object
-    fetch(`https://book-management-4qw7.onrender.com/favorite-book/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(bookObj),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error('Error updating favorite book:', error);
-      });
   };
   
     return (
